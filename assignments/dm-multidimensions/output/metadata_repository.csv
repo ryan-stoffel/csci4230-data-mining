@@ -1,0 +1,20 @@
+Attribute,TableName,Type,Description
+repo_id,FactRepository,Key,GitHub repository ID
+time_id,FactRepository,Foreign key,Creation-time dimension member
+language_id,FactRepository,Foreign key,Primary language member
+owner_id,FactRepository,Foreign key,Owner type member
+license_id,FactRepository,Foreign key,License group member
+status_id,FactRepository,Foreign key,Snapshot maintenance label member
+year,DimTime,Dimension,Creation year
+quarter,DimTime,Dimension,Creation quarter
+month,DimTime,Dimension,Creation month number
+language,DimLanguage,Dimension,Primary programming language
+owner_type,DimOwner,Dimension,User or organization
+license_group,DimLicense,Dimension,Grouped license
+maintenance_status,DimStatus,Dimension,Status at snapshot
+repo_count,FactRepository,Distributive measure,One per repository; sum across disjoint groups
+stars,FactRepository,Distributive measure,Stars at snapshot; sum across disjoint groups
+forks,FactRepository,Distributive measure,Forks at snapshot; sum across disjoint groups
+open_issues,FactRepository,Distributive measure,Open issues at snapshot; sum across disjoint groups
+size_kb,FactRepository,Distributive measure,Size at snapshot in KB
+topic_count,FactRepository,Distributive measure,Number of topics at snapshot
